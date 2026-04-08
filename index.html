@@ -1,106 +1,89 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portal de Denúncias</title>
+<title>Sistema de Denúncias Anônimas</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 </head>
 
 <body>
 
 <header>
-
-<div class="logoContainer">
-
-<div class="logo">🛡️</div>
-
-<div>
-<h1>Portal de Denúncias</h1>
-<p>Registro seguro e anônimo</p>
-</div>
-
-</div>
-
+<h1>Sistema de Denúncias Anônimas</h1>
+<p>Registro seguro e confidencial</p>
 </header>
 
 <div class="container">
 
-<h2>Selecione a categoria da denúncia</h2>
-
-<div class="categorias">
+<div id="categorias" class="categorias">
 
 <button onclick="abrirCategoria('seguranca')" class="categoria">
-🚓 Segurança
+🚓 Segurança e Violência
 </button>
 
 <button onclick="abrirCategoria('direitos')" class="categoria">
-⚖️ Direitos Humanos
+⚖️ Direitos e Conduta
 </button>
 
 <button onclick="abrirCategoria('ambiente')" class="categoria">
-🌿 Meio Ambiente
+🌱 Meio Ambiente e Bem-Estar
 </button>
 
 <button onclick="abrirCategoria('cidade')" class="categoria">
-🏙️ Problemas Urbanos
+🏙 Cidade e Serviços
 </button>
 
 </div>
 
-<div id="crimes"></div>
+<div id="subcategorias"></div>
 
-<div id="formulario" class="formulario">
+<div id="formulario" class="formulario hidden">
 
-<h3 id="tituloCrime"></h3>
+<h2>Registrar denúncia</h2>
 
-<input type="text" id="bairro" placeholder="Bairro" required>
+<input id="bairro" placeholder="Bairro">
 
-<input type="text" id="rua" placeholder="Rua ou local" required>
+<input id="rua" placeholder="Rua ou local">
 
-<input type="text" id="referencia" placeholder="Ponto de referência">
+<input id="referencia" placeholder="Ponto de referência">
 
-<textarea id="descricao" placeholder="Descreva a denúncia" required></textarea>
+<textarea id="descricao" placeholder="Descreva a denúncia"></textarea>
 
-<label class="uploadLabel">Anexar imagens da denúncia</label>
+<label>Anexar evidência</label>
 
-<input type="file" id="imagem" accept="image/*" multiple>
+<input type="file" id="arquivo">
 
 <div class="botoes">
 
-<button class="cancelar" onclick="cancelar()">Cancelar</button>
+<button onclick="cancelar()">Cancelar</button>
 
-<button class="finalizar" onclick="registrar()">Finalizar Registro</button>
+<button onclick="registrar()">Finalizar registro</button>
 
 </div>
-
-<p id="protocolo"></p>
 
 </div>
 
 <div class="consulta">
 
-<h3>Consultar denúncia</h3>
+<h2>Consultar protocolo</h2>
 
-<input type="text" id="consultaProtocolo" placeholder="Digite o protocolo" maxlength="6">
+<input id="numeroProtocolo" placeholder="Digite o número do protocolo">
 
 <button onclick="consultar()">Consultar</button>
 
-<p id="status"></p>
-
 </div>
+
+<div id="resultado"></div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
