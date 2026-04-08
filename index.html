@@ -10,73 +10,65 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 
 <body>
 
-<header class="topo">
+<header>
 
 <h1>Portal de Denúncias</h1>
-<p>Registro anônimo e seguro de ocorrências</p>
+<p>Registro anônimo e seguro</p>
 
 </header>
 
 
 <div class="container">
 
-<h2>Selecione uma categoria</h2>
+<h2>Selecione a categoria da denúncia</h2>
 
 <div class="categorias">
 
-<div class="categoria" onclick="abrirCategoria('seguranca')">
-<span class="icone">🛡️</span>
-<h3>Segurança</h3>
-<p>Crimes e atividades suspeitas</p>
-</div>
+<button onclick="abrirCategoria('seguranca')" class="categoria">
+SEGURANÇA
+</button>
 
-<div class="categoria" onclick="abrirCategoria('direitos')">
-<span class="icone">⚖️</span>
-<h3>Direitos</h3>
-<p>Assédio e discriminação</p>
-</div>
+<button onclick="abrirCategoria('direitos')" class="categoria">
+DIREITOS HUMANOS
+</button>
 
-<div class="categoria" onclick="abrirCategoria('ambiente')">
-<span class="icone">🌿</span>
-<h3>Meio Ambiente</h3>
-<p>Crimes ambientais</p>
-</div>
+<button onclick="abrirCategoria('ambiente')" class="categoria">
+MEIO AMBIENTE
+</button>
 
-<div class="categoria" onclick="abrirCategoria('cidade')">
-<span class="icone">🏙️</span>
-<h3>Cidade</h3>
-<p>Problemas urbanos</p>
-</div>
+<button onclick="abrirCategoria('cidade')" class="categoria">
+PROBLEMAS URBANOS
+</button>
 
 </div>
 
 
-<div id="crimesContainer"></div>
+<div id="crimes"></div>
 
 
 <div id="formulario" class="formulario">
 
-<h2>Registrar denúncia</h2>
+<h3 id="tituloCrime"></h3>
 
-<p id="tipoCrime"></p>
+<input type="text" id="bairro" placeholder="Bairro">
 
-<input type="text" placeholder="Bairro" id="bairro">
+<input type="text" id="rua" placeholder="Rua ou local">
 
-<input type="text" placeholder="Rua ou local" id="rua">
+<input type="text" id="referencia" placeholder="Ponto de referência">
 
-<input type="text" placeholder="Ponto de referência" id="referencia">
-
-<textarea placeholder="Descreva a denúncia" id="descricao"></textarea>
+<textarea id="descricao" placeholder="Descreva a denúncia"></textarea>
 
 <div class="botoes">
 
 <button class="cancelar" onclick="cancelar()">Cancelar</button>
 
-<button class="enviar" onclick="registrar()">Finalizar registro</button>
+<button class="finalizar" onclick="registrar()">Finalizar Registro</button>
 
 </div>
 
@@ -87,9 +79,9 @@
 
 <div class="consulta">
 
-<h2>Consultar denúncia</h2>
+<h3>Consultar denúncia</h3>
 
-<input type="text" placeholder="Número do protocolo" id="consulta">
+<input type="text" id="consultaProtocolo" placeholder="Digite o protocolo">
 
 <button onclick="consultar()">Consultar</button>
 
@@ -99,10 +91,8 @@
 
 </div>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script src="script.js"></script>
 
 </body>
+
 </html>
