@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -18,11 +19,18 @@
 
 <header>
 
+<div class="logoContainer">
+
+<div class="logo">🛡️</div>
+
+<div>
 <h1>Portal de Denúncias</h1>
-<p>Registro anônimo e seguro</p>
+<p>Registro seguro e anônimo</p>
+</div>
+
+</div>
 
 </header>
-
 
 <div class="container">
 
@@ -31,26 +39,24 @@
 <div class="categorias">
 
 <button onclick="abrirCategoria('seguranca')" class="categoria">
-SEGURANÇA
+🚓 Segurança
 </button>
 
 <button onclick="abrirCategoria('direitos')" class="categoria">
-DIREITOS HUMANOS
+⚖️ Direitos Humanos
 </button>
 
 <button onclick="abrirCategoria('ambiente')" class="categoria">
-MEIO AMBIENTE
+🌿 Meio Ambiente
 </button>
 
 <button onclick="abrirCategoria('cidade')" class="categoria">
-PROBLEMAS URBANOS
+🏙️ Problemas Urbanos
 </button>
 
 </div>
 
-
 <div id="crimes"></div>
-
 
 <div id="formulario" class="formulario">
 
@@ -64,6 +70,10 @@ PROBLEMAS URBANOS
 
 <textarea id="descricao" placeholder="Descreva a denúncia"></textarea>
 
+<label>Anexar imagens da denúncia</label>
+
+<input type="file" id="imagem" accept="image/*" multiple>
+
 <div class="botoes">
 
 <button class="cancelar" onclick="cancelar()">Cancelar</button>
@@ -76,12 +86,11 @@ PROBLEMAS URBANOS
 
 </div>
 
-
 <div class="consulta">
 
 <h3>Consultar denúncia</h3>
 
-<input type="text" id="consultaProtocolo" placeholder="Digite o protocolo">
+<input type="text" id="consultaProtocolo" placeholder="Digite o protocolo" maxlength="6">
 
 <button onclick="consultar()">Consultar</button>
 
@@ -94,5 +103,4 @@ PROBLEMAS URBANOS
 <script src="script.js"></script>
 
 </body>
-
 </html>
