@@ -56,7 +56,7 @@ function selecionarCrime(crime){
 crimeSelecionado=crime
 
 document.getElementById("tituloCrime").innerText=
-"Denúncia: "+crime
+"Denúncia selecionada: "+crime
 
 document.getElementById("formulario").style.display="block"
 
@@ -99,7 +99,7 @@ doc.setFontSize(12)
 
 doc.text("Protocolo: "+protocolo,20,40)
 
-doc.text("Tipo: "+crimeSelecionado,20,50)
+doc.text("Tipo de denúncia: "+crimeSelecionado,20,50)
 
 doc.text("Bairro: "+bairro,20,60)
 
@@ -110,6 +110,8 @@ doc.text("Referência: "+referencia,20,80)
 doc.text("Descrição:",20,100)
 
 doc.text(descricao,20,110)
+
+doc.text("Registro realizado com sucesso.",20,140)
 
 doc.save("protocolo-"+protocolo+".pdf")
 
