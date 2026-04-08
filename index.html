@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Denúncias Anônimas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Sistema de Denúncias Anônimas</h1>
+
+<h2>Categoria da denúncia</h2>
+<select id="categoria">
+<option>Violência contra a mulher</option>
+<option>Violência contra crianças</option>
+<option>Violência contra idosos</option>
+<option>Furto/Roubo</option>
+<option>Drogas</option>
+<option>Atividade suspeita</option>
+<option>Assédio moral/sexual</option>
+<option>Bullying/Cyberbullying</option>
+<option>Discriminação</option>
+<option>Direitos humanos</option>
+<option>Maus-tratos a animais</option>
+<option>Crimes ambientais</option>
+<option>Perturbação do sossego</option>
+<option>Situações de risco</option>
+<option>Infraestrutura urbana</option>
+<option>Serviços públicos</option>
+<option>Transporte e trânsito</option>
+<option>Irregularidades escolares</option>
+</select>
+
+<h2>Local da denúncia</h2>
+
+<input type="text" id="bairro" placeholder="Bairro">
+<input type="text" id="rua" placeholder="Rua">
+<input type="text" id="referencia" placeholder="Ponto de referência">
+
+<h2>Descrição</h2>
+
+<textarea id="descricao" placeholder="Descreva a denúncia"></textarea>
+
+<h2>Anexar evidência</h2>
+
+<input type="file">
+
+<br><br>
+
+<button onclick="gerarProtocolo()">Enviar denúncia</button>
+
+<p id="protocolo"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
