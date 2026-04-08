@@ -2,22 +2,22 @@ body{
 
 margin:0;
 font-family:Arial;
-background:#ececec;
+background:#e5e5e5;
 
 }
 
-.topo{
+header{
 
-background:black;
+background:#000;
 color:white;
 text-align:center;
 padding:30px;
 
 }
 
-.topo p{
+header p{
 
-color:#bbb;
+color:#ccc;
 
 }
 
@@ -26,12 +26,13 @@ color:#bbb;
 max-width:900px;
 margin:auto;
 padding:30px;
+text-align:center;
 
 }
 
 h2{
 
-text-align:center;
+margin-bottom:30px;
 
 }
 
@@ -40,37 +41,30 @@ text-align:center;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
-margin-top:30px;
 
 }
 
 .categoria{
 
-background:#333;
+background:#1c1c1c;
 color:white;
+border:none;
 padding:25px;
-border-radius:8px;
+font-size:16px;
 cursor:pointer;
+border-radius:6px;
 transition:0.3s;
 
 }
 
 .categoria:hover{
 
-background:#c62828;
+background:#b71c1c;
 transform:scale(1.05);
 
 }
 
-.icone{
-
-font-size:30px;
-display:block;
-margin-bottom:10px;
-
-}
-
-#crimesContainer{
+#crimes{
 
 margin-top:30px;
 display:grid;
@@ -79,31 +73,31 @@ gap:15px;
 
 }
 
-.crimeBtn{
+.crime{
 
-background:#c62828;
+background:#b71c1c;
 color:white;
-padding:15px;
 border:none;
+padding:15px;
 border-radius:6px;
 cursor:pointer;
 
 }
 
-.crimeBtn:hover{
+.crime:hover{
 
-background:#9e1b1b;
+background:#7f0000;
 
 }
 
 .formulario{
 
+display:none;
 margin-top:40px;
 background:white;
 padding:25px;
 border-radius:6px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-display:none;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 
 }
 
@@ -127,58 +121,57 @@ height:120px;
 
 margin-top:20px;
 display:flex;
-gap:10px;
+justify-content:center;
+gap:15px;
 
 }
 
 .cancelar{
 
-background:#777;
+background:#555;
 color:white;
 border:none;
-padding:12px;
+padding:12px 20px;
 cursor:pointer;
 
 }
 
-.enviar{
+.finalizar{
 
-background:#c62828;
+background:#b71c1c;
 color:white;
 border:none;
-padding:12px;
-cursor:pointer;
-
-}
-
-.consulta{
-
-margin:40px auto;
-background:white;
-padding:20px;
-border-radius:6px;
-max-width:400px;
-text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-
-}
-
-.consulta button{
-
-margin-top:15px;
-background:#c62828;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:4px;
+padding:12px 20px;
 cursor:pointer;
 
 }
 
 #protocolo{
 
-margin-top:10px;
-color:#c62828;
+margin-top:15px;
+color:#b71c1c;
 font-weight:bold;
+
+}
+
+.consulta{
+
+margin:40px auto;
+max-width:350px;
+background:white;
+padding:20px;
+border-radius:6px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+
+}
+
+.consulta button{
+
+margin-top:10px;
+background:#b71c1c;
+color:white;
+border:none;
+padding:10px 20px;
+cursor:pointer;
 
 }
