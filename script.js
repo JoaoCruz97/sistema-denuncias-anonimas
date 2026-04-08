@@ -72,10 +72,43 @@ function registrar(){
 
 let numero=Math.floor(Math.random()*1000000)
 
+let bairro=document.getElementById("bairro").value
+let rua=document.getElementById("rua").value
+let referencia=document.getElementById("referencia").value
+let descricao=document.getElementById("descricao").value
+
 localStorage.setItem(numero,"Recebida")
 
 document.getElementById("protocolo").innerText=
 "Protocolo gerado: "+numero
+
+gerarPDF(numero,bairro,rua,referencia,descricao)
+
+}
+
+function gerarPDF(numero,bairro,rua,referencia,descricao){
+
+const { jsPDF } = window.jspdf
+
+const doc = new jsPDF()
+
+doc.text("Comprovante de Denúncia",20,20)
+
+doc.text("Protocolo: "+numero,20,40)
+
+doc.text("Tipo de denúncia: "+crimeAtual,20,50)
+
+doc.text("Bairro: "+bairro,20,60)
+
+doc.text("Rua: "+rua,20,70)
+
+doc.text("Referência: "+referencia,20,80)
+
+doc.text("Descrição:",20,100)
+
+doc.text(descricao,20,110)
+
+doc.save("protocolo-"+numero+".pdf")
 
 }
 
