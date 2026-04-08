@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sistema de Denúncias Anônimas</title>
 
 <link rel="stylesheet" href="style.css">
@@ -14,33 +15,41 @@
 <body>
 
 <header>
+
 <h1>Sistema de Denúncias Anônimas</h1>
 <p>Registro seguro e confidencial</p>
+
 </header>
 
 <div class="container">
 
-<div id="categorias" class="categorias">
+<!-- CATEGORIAS -->
+
+<div class="categorias">
 
 <button onclick="abrirCategoria('seguranca')" class="categoria">
-🚓 Segurança e Violência
+Segurança e Violência
 </button>
 
 <button onclick="abrirCategoria('direitos')" class="categoria">
-⚖️ Direitos e Conduta
+Direitos e Conduta
 </button>
 
 <button onclick="abrirCategoria('ambiente')" class="categoria">
-🌱 Meio Ambiente e Bem-Estar
+Meio Ambiente e Bem-Estar
 </button>
 
 <button onclick="abrirCategoria('cidade')" class="categoria">
-🏙 Cidade e Serviços
+Cidade e Serviços
 </button>
 
 </div>
 
+<!-- SUBCATEGORIAS -->
+
 <div id="subcategorias"></div>
+
+<!-- FORMULÁRIO -->
 
 <div id="formulario" class="formulario hidden">
 
@@ -68,11 +77,13 @@
 
 </div>
 
+<!-- CONSULTA -->
+
 <div class="consulta">
 
 <h2>Consultar protocolo</h2>
 
-<input id="numeroProtocolo" placeholder="Digite o número do protocolo">
+<input id="numeroProtocolo" placeholder="Digite o protocolo">
 
 <button onclick="consultar()">Consultar</button>
 
@@ -85,5 +96,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>
