@@ -1,62 +1,47 @@
 body{
-
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#e6e6e6;
-
 }
 
 header{
-
-background:black;
+background:#000;
 color:white;
 padding:25px;
-
 }
 
 .logoContainer{
-
 display:flex;
 align-items:center;
 justify-content:center;
 gap:15px;
-
 }
 
 .logo{
-
 font-size:40px;
 color:#b71c1c;
-
 }
 
 header p{
-
 color:#bbb;
 margin-top:4px;
-
 }
 
 .container{
-
 max-width:900px;
 margin:auto;
 padding:30px;
 text-align:center;
-
 }
 
 .categorias{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 margin-top:30px;
-
 }
 
 .categoria{
-
 background:#1c1c1c;
 color:white;
 border:none;
@@ -65,152 +50,125 @@ font-size:16px;
 border-radius:6px;
 cursor:pointer;
 transition:0.3s;
-
 }
 
 .categoria:hover{
-
 background:#b71c1c;
 transform:scale(1.05);
-
 }
 
 #crimes{
-
 margin-top:30px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:15px;
-
 }
 
 .crime{
-
 background:#b71c1c;
 color:white;
 border:none;
 padding:15px;
 border-radius:6px;
 cursor:pointer;
-
 }
 
-.crime:hover{
-
-background:#7f0000;
-
-}
+.crime:hover
 
 .formulario{
-
 display:none;
 margin-top:40px;
 background:white;
-padding:25px;
+padding:30px;
 border-radius:6px;
 box-shadow:0 3px 10px rgba(0,0,0,0.2);
-animation:fade 0.5s;
-
+animation:fade 0.4s;
 }
 
-input, textarea{
-
-width:60%;
+.formulario input,
+.formulario textarea,
+.formulario input[type="file"]{
+width:420px;
+max-width:90%;
 display:block;
-margin:10px auto;
+margin:12px auto;
 padding:10px;
 border:1px solid #ccc;
 border-radius:4px;
-
+box-sizing:border-box;
 }
 
 textarea{
-
 height:120px;
-
 }
 
-#imagem{
-
-width:60%;
-margin:auto;
-margin-top:10px;
-
+.uploadLabel{
+display:block;
+margin-top:15px;
+font-weight:bold;
 }
 
 .botoes{
-
 margin-top:20px;
 display:flex;
 justify-content:center;
 gap:15px;
-
 }
 
 .cancelar{
-
 background:#555;
 color:white;
 border:none;
 padding:12px 20px;
 cursor:pointer;
-
 }
 
 .finalizar{
-
 background:#b71c1c;
 color:white;
 border:none;
 padding:12px 20px;
 cursor:pointer;
-
 }
 
 #protocolo{
-
 margin-top:15px;
 color:#b71c1c;
 font-weight:bold;
-
 }
 
 .consulta{
-
 margin:40px auto;
-max-width:300px;
+max-width:320px;
 background:white;
 padding:20px;
 border-radius:6px;
 box-shadow:0 3px 10px rgba(0,0,0,0.2);
 text-align:center;
-
 }
 
 .consulta input{
-
-width:80%;
+width:220px;
+display:block;
+margin:12px auto;
 padding:10px;
-margin-top:10px;
-
+border:1px solid #ccc;
+border-radius:4px;
+box-sizing:border-box;
 }
 
 .consulta button{
-
 display:block;
-margin:15px auto;
+margin:10px auto;
 background:#b71c1c;
 color:white;
 border:none;
-padding:10px 20px;
+padding:10px 25px;
 cursor:pointer;
 border-radius:4px;
-
 }
 
 @keyframes fade{
-
 from{opacity:0}
 to{opacity:1}
-
 }
