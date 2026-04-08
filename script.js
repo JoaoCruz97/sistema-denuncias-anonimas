@@ -35,23 +35,24 @@ cidade:[
 
 function mostrarCrimes(cat){
 
-document.getElementById("crimesArea").style.display="block"
+const areaCrimes=document.getElementById("crimes")
+const crimesArea=document.getElementById("crimesArea")
 
-let area=document.getElementById("crimes")
-
-area.innerHTML=""
+areaCrimes.innerHTML=""
 
 categorias[cat].forEach(crime=>{
 
-let btn=document.createElement("button")
+const btn=document.createElement("button")
 
-btn.innerText=crime
+btn.textContent=crime
 
 btn.onclick=()=>selecionarCrime(crime)
 
-area.appendChild(btn)
+areaCrimes.appendChild(btn)
 
 })
+
+crimesArea.classList.remove("hidden")
 
 }
 
@@ -60,17 +61,17 @@ function selecionarCrime(crime){
 
 crimeAtual=crime
 
-document.getElementById("formArea").style.display="block"
-
-document.getElementById("crimeSelecionado").innerText=
+document.getElementById("crimeSelecionado").textContent=
 "Tipo de denúncia: "+crime
+
+document.getElementById("formArea").classList.remove("hidden")
 
 }
 
 
 function cancelar(){
 
-document.getElementById("formArea").style.display="none"
+document.getElementById("formArea").classList.add("hidden")
 
 }
 
@@ -81,7 +82,7 @@ let numero=Math.floor(Math.random()*1000000)
 
 localStorage.setItem(numero,"Recebida")
 
-document.getElementById("protocolo").innerText=
+document.getElementById("protocolo").textContent=
 "Denúncia registrada. Protocolo: "+numero
 
 }
@@ -95,12 +96,12 @@ let status=localStorage.getItem(numero)
 
 if(status){
 
-document.getElementById("status").innerText=
+document.getElementById("status").textContent=
 "Status da denúncia: "+status
 
 }else{
 
-document.getElementById("status").innerText=
+document.getElementById("status").textContent=
 "Protocolo não encontrado"
 
 }
