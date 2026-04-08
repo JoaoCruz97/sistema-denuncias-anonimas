@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sistema de Denúncias Anônimas</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<h1>Sistema de Denúncias Anônimas</h1>
+<header>
 
-<h2>Categoria da denúncia</h2>
-<select id="categoria">
-<option>Violência contra a mulher</option>
-<option>Violência contra crianças</option>
-<option>Violência contra idosos</option>
-<option>Furto/Roubo</option>
-<option>Drogas</option>
-<option>Atividade suspeita</option>
-<option>Assédio moral/sexual</option>
-<option>Bullying/Cyberbullying</option>
-<option>Discriminação</option>
-<option>Direitos humanos</option>
-<option>Maus-tratos a animais</option>
-<option>Crimes ambientais</option>
-<option>Perturbação do sossego</option>
-<option>Situações de risco</option>
-<option>Infraestrutura urbana</option>
-<option>Serviços públicos</option>
-<option>Transporte e trânsito</option>
-<option>Irregularidades escolares</option>
-</select>
+<h1>Portal de Denúncias Anônimas</h1>
+<p>Serviço seguro para registro de ocorrências</p>
 
-<h2>Local da denúncia</h2>
+</header>
+
+
+<section class="categorias">
+
+<h2>Selecione uma categoria</h2>
+
+<div class="grid">
+
+<button onclick="mostrarCrimes('seguranca')">Segurança e Violência</button>
+
+<button onclick="mostrarCrimes('direitos')">Direitos e Conduta</button>
+
+<button onclick="mostrarCrimes('meio')">Meio Ambiente</button>
+
+<button onclick="mostrarCrimes('cidade')">Cidade e Serviços</button>
+
+</div>
+
+</section>
+
+
+<section id="listaCrimes" class="hidden">
+
+<h2>Tipos de ocorrência</h2>
+
+<div id="crimes"></div>
+
+</section>
+
+
+<section id="formulario" class="hidden">
+
+<h2>Registrar denúncia</h2>
+
+<p id="crimeSelecionado"></p>
 
 <input type="text" id="bairro" placeholder="Bairro">
+
 <input type="text" id="rua" placeholder="Rua">
+
 <input type="text" id="referencia" placeholder="Ponto de referência">
 
-<h2>Descrição</h2>
-
-<textarea id="descricao" placeholder="Descreva a denúncia"></textarea>
-
-<h2>Anexar evidência</h2>
+<textarea id="descricao" placeholder="Descreva a ocorrência"></textarea>
 
 <input type="file">
 
-<br><br>
+<div class="botoes">
 
-<button onclick="gerarProtocolo()">Enviar denúncia</button>
+<button class="cancelar" onclick="cancelar()">Cancelar</button>
+
+<button class="finalizar" onclick="registrar()">Finalizar registro</button>
+
+</div>
 
 <p id="protocolo"></p>
 
+</section>
+
+
+<section class="consulta">
+
+<h2>Consultar denúncia</h2>
+
+<input type="text" id="consultaProtocolo" placeholder="Digite o protocolo">
+
+<button onclick="consultar()">Consultar</button>
+
+<p id="status"></p>
+
+</section>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
