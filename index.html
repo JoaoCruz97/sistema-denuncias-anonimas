@@ -1,106 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Den&uacute;ncias An&ocirc;nimas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portal de Denúncias</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <header class="topo">
-    <div class="container topo-conteudo">
-      <p class="selo">Portal Institucional</p>
-      <h1>Sistema de Den&uacute;ncias An&ocirc;nimas</h1>
-      <p class="subtitulo">Registro seguro de ocorr&ecirc;ncias sem identifica&ccedil;&atilde;o pessoal.</p>
-    </div>
-  </header>
 
-  <main class="container principal">
-    <section class="painel destaque">
-      <h2>Registrar nova den&uacute;ncia</h2>
-      <p>Selecione uma categoria para visualizar os tipos de ocorr&ecirc;ncia dispon&iacute;veis.</p>
+<nav class="menu">
 
-      <div class="grid-categorias" id="categoriesGrid">
-        <button type="button" class="category-btn" data-category="seguranca">Seguran&ccedil;a e Viol&ecirc;ncia</button>
-        <button type="button" class="category-btn" data-category="direitos">Direitos e Conduta</button>
-        <button type="button" class="category-btn" data-category="meioAmbiente">Meio Ambiente</button>
-        <button type="button" class="category-btn" data-category="cidade">Cidade e Servi&ccedil;os P&uacute;blicos</button>
-      </div>
-    </section>
+<div class="logo">
+PORTAL DE DENÚNCIAS
+</div>
 
-    <section class="painel oculto" id="crimesSection">
-      <h2>Tipos de ocorr&ecirc;ncia</h2>
-      <p class="legenda" id="selectedCategoryLabel"></p>
-      <div class="grid-crimes" id="crimeButtons"></div>
-    </section>
+<div class="links">
+<a href="#">Registrar denúncia</a>
+<a href="#">Consultar protocolo</a>
+</div>
 
-    <section class="painel formulario-box oculto" id="formSection">
-      <h2>Formul&aacute;rio de registro da den&uacute;ncia</h2>
-      <form id="denunciationForm" novalidate>
-        <div class="campo">
-          <label for="occurrenceType">Tipo de ocorr&ecirc;ncia selecionada</label>
-          <input id="occurrenceType" name="occurrenceType" type="text" readonly required>
-        </div>
+</nav>
 
-        <div class="campo">
-          <label for="bairro">Bairro da ocorr&ecirc;ncia</label>
-          <input id="bairro" name="bairro" type="text" required>
-        </div>
 
-        <div class="campo">
-          <label for="localAproximado">Rua ou local aproximado</label>
-          <input id="localAproximado" name="localAproximado" type="text" required>
-        </div>
+<header>
 
-        <div class="campo">
-          <label for="referencia">Ponto de refer&ecirc;ncia</label>
-          <input id="referencia" name="referencia" type="text">
-        </div>
+<h1>Registro Anônimo de Ocorrências</h1>
 
-        <div class="campo">
-          <label for="descricao">Descri&ccedil;&atilde;o detalhada da den&uacute;ncia</label>
-          <textarea id="descricao" name="descricao" minlength="20" required></textarea>
-        </div>
+<p>Utilize este portal para registrar denúncias de forma segura.</p>
 
-        <div class="campo">
-          <label for="anexos">Upload opcional de arquivos ou imagens</label>
-          <input id="anexos" name="anexos" type="file" multiple>
-        </div>
+</header>
 
-        <div class="acoes">
-          <button type="button" id="cancelForm" class="btn-secundario">Cancelar</button>
-          <button type="submit" class="btn-principal">Finalizar registro</button>
-        </div>
-      </form>
-    </section>
 
-    <section class="painel resultado oculto" id="protocolResult" aria-live="polite"></section>
+<main>
 
-    <section class="painel consulta-box">
-      <h2>Consultar den&uacute;ncia</h2>
-      <p>Digite o n&uacute;mero do protocolo para acompanhar o status.</p>
 
-      <form id="consultaForm">
-        <div class="linha-consulta">
-          <input id="consultaProtocolo" type="text" placeholder="Ex: DAN-ABC123-4567" required>
-          <button type="submit" class="btn-principal">Consultar</button>
-        </div>
-      </form>
+<section class="categorias">
 
-      <div id="consultaResultado" class="mensagem-consulta" aria-live="polite"></div>
-    </section>
-  </main>
+<h2>Selecione uma categoria</h2>
 
-  <footer class="rodape">
-    <div class="container">
-      <p>Sistema de Den&uacute;ncias An&ocirc;nimas - Uso educativo e demonstrativo de Engenharia de Software.</p>
-    </div>
-  </footer>
+<div class="grid">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="script.js"></script>
+<button onclick="mostrarCrimes('seguranca')">
+Segurança
+</button>
+
+<button onclick="mostrarCrimes('direitos')">
+Direitos
+</button>
+
+<button onclick="mostrarCrimes('ambiente')">
+Meio Ambiente
+</button>
+
+<button onclick="mostrarCrimes('cidade')">
+Cidade
+</button>
+
+</div>
+
+</section>
+
+
+<section id="crimesArea" class="hidden">
+
+<h2>Tipo de ocorrência</h2>
+
+<div id="crimes"></div>
+
+</section>
+
+
+<section id="formArea" class="hidden">
+
+<h2>Registrar denúncia</h2>
+
+<p id="crimeSelecionado"></p>
+
+<input type="text" id="bairro" placeholder="Bairro">
+
+<input type="text" id="rua" placeholder="Rua ou local">
+
+<input type="text" id="referencia" placeholder="Ponto de referência">
+
+<textarea id="descricao" placeholder="Descreva a ocorrência"></textarea>
+
+<div class="botoes">
+
+<button class="cancelar" onclick="cancelar()">
+Cancelar
+</button>
+
+<button class="finalizar" onclick="registrar()">
+Finalizar registro
+</button>
+
+</div>
+
+<p id="protocolo"></p>
+
+</section>
+
+
+<section class="consulta">
+
+<h2>Consultar denúncia</h2>
+
+<input type="text" id="consultaProtocolo" placeholder="Digite o número do protocolo">
+
+<button onclick="consultar()">Consultar</button>
+
+<p id="status"></p>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>
