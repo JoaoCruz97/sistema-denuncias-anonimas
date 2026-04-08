@@ -1,28 +1,27 @@
 body{
 
-font-family: Arial;
 margin:0;
+font-family:Arial;
 background:#111;
 
 }
 
 header{
 
-background:#8b0000;
+background:#b30000;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 
 }
 
 .container{
 
-width:90%;
 max-width:700px;
 margin:auto;
+margin-top:30px;
 background:white;
 padding:30px;
-margin-top:30px;
 border-radius:10px;
 
 }
@@ -39,9 +38,9 @@ gap:15px;
 
 padding:20px;
 font-size:16px;
+border:none;
 background:#333;
 color:white;
-border:none;
 cursor:pointer;
 border-radius:8px;
 
@@ -49,7 +48,7 @@ border-radius:8px;
 
 .categoria:hover{
 
-background:#8b0000;
+background:#b30000;
 
 }
 
@@ -61,22 +60,22 @@ margin-top:20px;
 
 .subcrime{
 
-display:block;
 width:100%;
 padding:12px;
 margin:5px 0;
-background:#eee;
 border:none;
+background:#eee;
 cursor:pointer;
+border-radius:5px;
 
 }
 
 .formulario{
 
-margin-top:20px;
 display:flex;
 flex-direction:column;
 align-items:center;
+margin-top:20px;
 
 }
 
@@ -104,8 +103,8 @@ margin-top:10px;
 
 .botoes button{
 
-margin:5px;
 padding:10px 20px;
+margin:5px;
 
 }
 
@@ -119,28 +118,65 @@ text-align:center;
 .consulta input{
 
 padding:10px;
-width:200px;
+width:220px;
 
 }
 
-#resultado{
+.consulta button{
 
+padding:10px 20px;
+
+}
+
+.cardResultado{
+
+background:#f1f1f1;
+padding:20px;
 margin-top:20px;
-background:#eee;
-padding:15px;
 border-radius:8px;
 
 }
 
 .status{
 
-color:red;
+color:#b30000;
 font-weight:bold;
+
+}
+
+.btnDownload{
+
+margin-top:15px;
+padding:10px 20px;
+background:#b30000;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
 
 }
 
 .hidden{
 
 display:none;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:600px){
+
+.categorias{
+
+grid-template-columns:1fr;
+
+}
+
+.formulario input,
+.formulario textarea{
+
+width:95%;
+
+}
 
 }
