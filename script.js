@@ -33,11 +33,11 @@ cidade:[
 
 };
 
-let tipoSelecionado = "";
+let tipoSelecionado="";
 
 function abrirCategoria(cat){
 
-const area = document.getElementById("subcategorias");
+const area=document.getElementById("subcategorias");
 
 area.innerHTML="";
 
@@ -124,6 +124,8 @@ return;
 
 document.getElementById("resultado").innerHTML=`
 
+<div class="cardResultado">
+
 <h3>Resumo da denúncia</h3>
 
 <p><b>Protocolo:</b> ${dados.protocolo}</p>
@@ -140,15 +142,19 @@ document.getElementById("resultado").innerHTML=`
 
 <p class="status">Status atual: ${dados.status}</p>
 
-<button onclick="baixar()">Baixar registro</button>
+<button onclick="baixarRegistro()" class="btnDownload">
+Baixar comprovante
+</button>
+
+</div>
 
 `;
 
 }
 
-function baixar(){
+function baixarRegistro(){
 
-const area=document.getElementById("resultado");
+const area=document.querySelector(".cardResultado");
 
 html2canvas(area).then(canvas=>{
 
