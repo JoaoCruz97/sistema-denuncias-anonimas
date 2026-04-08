@@ -14,35 +14,19 @@
 
 <body>
 
-<nav class="menu">
-
-<div class="logo">
-PORTAL DE DENÚNCIAS
-</div>
-
-<div class="links">
-<a href="#">Registrar denúncia</a>
-<a href="#">Consultar protocolo</a>
-</div>
-
-</nav>
-
-
 <header>
 
-<h1>Registro Anônimo de Ocorrências</h1>
-
-<p>Utilize este portal para registrar denúncias de forma segura.</p>
+<h1>Portal de Denúncias</h1>
+<p>Registro anônimo de ocorrências</p>
 
 </header>
 
 
 <main>
 
-
 <section class="categorias">
 
-<h2>Selecione uma categoria</h2>
+<h2>Escolha uma categoria</h2>
 
 <div class="grid">
 
@@ -69,7 +53,7 @@ Cidade
 
 <section id="crimesArea" class="hidden">
 
-<h2>Tipo de ocorrência</h2>
+<h2>Selecione o tipo de denúncia</h2>
 
 <div id="crimes"></div>
 
@@ -92,13 +76,9 @@ Cidade
 
 <div class="botoes">
 
-<button class="cancelar" onclick="cancelar()">
-Cancelar
-</button>
+<button class="cancelar" onclick="cancelar()">Cancelar</button>
 
-<button class="finalizar" onclick="registrar()">
-Finalizar registro
-</button>
+<button class="finalizar" onclick="registrar()">Finalizar registro</button>
 
 </div>
 
@@ -111,7 +91,7 @@ Finalizar registro
 
 <h2>Consultar denúncia</h2>
 
-<input type="text" id="consultaProtocolo" placeholder="Digite o número do protocolo">
+<input type="text" id="consultaProtocolo" placeholder="Digite o protocolo">
 
 <button onclick="consultar()">Consultar</button>
 
