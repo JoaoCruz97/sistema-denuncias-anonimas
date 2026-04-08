@@ -2,29 +2,41 @@ let crimeSelecionado=""
 
 const categorias={
 
-seguranca:[
+seguranca e violência:[
+"Violência contra a mulher",
+"Violência contra crianca",
+"Violência contra idosos",
 "Roubo",
 "Furto",
 "Tráfico de drogas",
 "Atividade suspeita"
 ],
 
-direitos:[
-"Assédio moral",
+direitos e conduta:[
+"Assédio Moral",
+"Assédio Sexual",
 "Discriminação",
 "Bullying"
+"Cyberbullying",
+"Direitos Humanos",
+"Denuncia Institucional"
 ],
 
-ambiente:[
+meio ambiente e bem estar:[
 "Maus-tratos a animais",
 "Poluição",
-"Desmatamento"
+"Desmatamento",
+"Crimes Ambientais",
+"Pertubacao do Sossego",
+"Situacões de Risco"
 ],
 
-cidade:[
+cidade e servicos:[
 "Infraestrutura urbana",
 "Problemas de transporte",
-"Serviços públicos"
+"Serviços públicos",
+"Irregularidade Escolar",
+"Transito"
 ]
 
 }
