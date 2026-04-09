@@ -28,7 +28,13 @@
 
 <div class="categorias">
 
-<button onclick="abrirCategoria('seguranca')" class="categoria">Segurança e Violência</button> <button onclick="abrirCategoria('direitos')" class="categoria">Direitos e Conduta</button> <button onclick="abrirCategoria('ambiente')" class="categoria">Meio Ambiente e Bem-Estar</button> <button onclick="abrirCategoria('cidade')" class="categoria">Cidade e Serviços</button>
+<button onclick="abrirCategoria('seguranca')" class="categoria">Segurança e Violência</button>
+
+<button onclick="abrirCategoria('direitos')" class="categoria">Direitos e Conduta</button>
+
+<button onclick="abrirCategoria('ambiente')" class="categoria">Meio Ambiente e Bem-Estar</button>
+
+<button onclick="abrirCategoria('cidade')" class="categoria">Cidade e Serviços</button>
 
 </div>
 
@@ -39,12 +45,16 @@
 <h2 id="tituloCrime"></h2>
 
 <input id="endereco" placeholder="Endereço ou local">
+
 <input id="bairro" placeholder="Bairro">
+
 <input id="referencia" placeholder="Ponto de referência">
 
 <textarea id="descricao" placeholder="Descreva a denúncia"></textarea>
 
-<label>Anexar imagem</label> <input type="file" id="imagem" accept="image/*">
+<label>Anexar imagem</label>
+
+<input type="file" id="imagem" accept="image/*">
 
 <div class="botoes">
 
@@ -56,7 +66,9 @@
 
 <div id="barraProtocolo" class="barraProtocolo hidden"></div>
 
-<button id="btnDownload" class="btnDownload hidden" onclick="baixarPDF()">Fazer download</button>
+<button id="btnDownload" class="btnDownload hidden" onclick="baixarPDF()">
+Fazer download
+</button>
 
 </div>
 
@@ -71,8 +83,6 @@
 <div id="barraConsulta" class="barraConsulta hidden"></div>
 
 </div>
-
-<div id="resultado"></div>
 
 </div>
 
