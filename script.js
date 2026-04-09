@@ -61,6 +61,8 @@ function abrirFormulario(crime){
 
 tipoSelecionado=crime;
 
+document.getElementById("tituloCrime").innerText=crime;
+
 document.getElementById("formulario").classList.remove("hidden");
 
 }
@@ -80,11 +82,8 @@ return "DEN"+Math.floor(Math.random()*1000000);
 function registrar(){
 
 const bairro=document.getElementById("bairro").value;
-
 const rua=document.getElementById("rua").value;
-
 const referencia=document.getElementById("referencia").value;
-
 const descricao=document.getElementById("descricao").value;
 
 const protocolo=gerarProtocolo();
@@ -117,7 +116,6 @@ const dados=JSON.parse(localStorage.getItem(numero));
 if(!dados){
 
 alert("Protocolo não encontrado");
-
 return;
 
 }
