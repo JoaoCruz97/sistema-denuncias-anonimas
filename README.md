@@ -100,13 +100,13 @@ Após alguns segundos o GitHub irá gerar o link público do site.
 Repositório do projeto:
 
 ```
-(https://github.com/JoaoCruz97/sistema-denuncias-anonimas )
+https://github.com/JoaoCruz97/sistema-denuncias-anonimas
 ```
 
 Site publicado:
 
 ```
-(https://joaocruz97.github.io/sistema-denuncias-anonimas/ )
+https://joaocruz97.github.io/sistema-denuncias-anonimas/ 
 ```
 
 ---
