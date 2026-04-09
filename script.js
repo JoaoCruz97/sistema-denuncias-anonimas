@@ -61,7 +61,7 @@ function abrirFormulario(crime){
 
 tipoSelecionado=crime;
 
-document.getElementById("tituloCrime").innerText=crime;
+document.getElementById("tituloCrime").innerText="Denúncia: "+crime;
 
 document.getElementById("formulario").classList.remove("hidden");
 
@@ -81,8 +81,8 @@ return "DEN"+Math.floor(Math.random()*1000000);
 
 function registrar(){
 
+const endereco=document.getElementById("endereco").value;
 const bairro=document.getElementById("bairro").value;
-const rua=document.getElementById("rua").value;
 const referencia=document.getElementById("referencia").value;
 const descricao=document.getElementById("descricao").value;
 
@@ -92,8 +92,8 @@ const denuncia={
 
 protocolo:protocolo,
 tipo:tipoSelecionado,
+endereco:endereco,
 bairro:bairro,
-rua:rua,
 referencia:referencia,
 descricao:descricao,
 status:"Denúncia recebida",
@@ -130,9 +130,9 @@ document.getElementById("resultado").innerHTML=`
 
 <p><b>Tipo:</b> ${dados.tipo}</p>
 
-<p><b>Bairro:</b> ${dados.bairro}</p>
+<p><b>Endereço:</b> ${dados.endereco}</p>
 
-<p><b>Rua:</b> ${dados.rua}</p>
+<p><b>Bairro:</b> ${dados.bairro}</p>
 
 <p><b>Referência:</b> ${dados.referencia}</p>
 
@@ -140,30 +140,8 @@ document.getElementById("resultado").innerHTML=`
 
 <p class="status">Status atual: ${dados.status}</p>
 
-<button onclick="baixarRegistro()" class="btnDownload">
-Baixar comprovante
-</button>
-
 </div>
 
 `;
-
-}
-
-function baixarRegistro(){
-
-const area=document.querySelector(".cardResultado");
-
-html2canvas(area).then(canvas=>{
-
-const link=document.createElement("a");
-
-link.download="registro_denuncia.png";
-
-link.href=canvas.toDataURL();
-
-link.click();
-
-});
 
 }
