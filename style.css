@@ -1,26 +1,108 @@
-.btnFinalizar{
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+}
 
+header{
+background:#b30000;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+margin-top:30px;
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+.categorias{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.categoria{
+padding:18px;
+font-size:16px;
+border:none;
+background:#333;
+color:white;
+cursor:pointer;
+border-radius:8px;
+}
+
+.categoria:hover
+
+#subcategorias{
+margin-top:20px;
+}
+
+.subcrime{
+width:100%;
+padding:12px;
+margin:5px 0;
+border:none;
+background:#ddd;
+cursor:pointer;
+border-radius:6px;
+}
+
+.subcrime.ativo{
+background:#b30000;
+color:white;
+}
+
+.formulario{
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-top:20px;
+}
+
+.formulario input,
+.formulario textarea{
+width:85%;
+max-width:420px;
+margin:8px;
+padding:10px;
+}
+
+textarea{
+height:100px;
+}
+
+.botoes{
+margin-top:10px;
+}
+
+.botoes button{
+padding:10px 20px;
+margin:5px;
+cursor:pointer;
+}
+
+.btnFinalizar{
 background:#b30000;
 color:white;
 border:none;
-padding:10px 20px;
 border-radius:6px;
-
 }
 
 .barraProtocolo{
-
 margin-top:15px;
 padding:12px;
 background:#f1f1f1;
 border-radius:6px;
 text-align:center;
 font-weight:bold;
-
 }
 
 .btnDownload{
-
 margin-top:10px;
 padding:12px;
 background:#333;
@@ -30,20 +112,44 @@ border-radius:6px;
 width:100%;
 max-width:250px;
 cursor:pointer;
+}
 
+.consulta{
+margin-top:30px;
+text-align:center;
+}
+
+.consulta input{
+padding:10px;
+width:200px;
+}
+
+.consulta button{
+padding:10px 20px;
 }
 
 .barraConsulta{
-
 margin-top:15px;
 padding:12px;
 background:#e9e9e9;
 border-radius:6px;
 text-align:center;
 font-weight:bold;
-
 }
 
 .hidden{
 display:none;
+}
+
+@media(max-width:600px){
+
+.categorias{
+grid-template-columns:1fr;
+}
+
+.formulario input,
+.formulario textarea{
+width:95%;
+}
+
 }
