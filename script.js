@@ -38,18 +38,23 @@ let tipoSelecionado="";
 function abrirCategoria(cat){
 
 const area=document.getElementById("subcategorias");
-
 area.innerHTML="";
 
 categorias[cat].forEach(crime=>{
 
 const btn=document.createElement("button");
-
 btn.className="subcrime";
-
 btn.innerText=crime;
 
-btn.onclick=()=>abrirFormulario(crime);
+btn.onclick=()=>{
+
+document.querySelectorAll(".subcrime").forEach(b=>b.classList.remove("ativo"));
+
+btn.classList.add("ativo");
+
+abrirFormulario(crime);
+
+};
 
 area.appendChild(btn);
 
@@ -103,7 +108,37 @@ data:new Date().toLocaleString()
 
 localStorage.setItem(protocolo,JSON.stringify(denuncia));
 
-alert("Protocolo gerado: "+protocolo);
+gerarPDF(denuncia);
+
+alert("Denúncia registrada! Protocolo: "+protocolo);
+
+}
+
+function gerarPDF(d){
+
+const { jsPDF } = window.jspdf;
+
+const doc=new jsPDF();
+
+doc.text("Sistema de Denúncias Anônimas",20,20);
+
+doc.text("Protocolo: "+d.protocolo,20,40);
+
+doc.text("Tipo: "+d.tipo,20,50);
+
+doc.text("Endereço: "+d.endereco,20,60);
+
+doc.text("Bairro: "+d.bairro,20,70);
+
+doc.text("Referência: "+d.referencia,20,80);
+
+doc.text("Descrição:",20,90);
+
+doc.text(d.descricao,20,100);
+
+doc.text("Status: "+d.status,20,120);
+
+doc.save("denuncia_"+d.protocolo+".pdf");
 
 }
 
