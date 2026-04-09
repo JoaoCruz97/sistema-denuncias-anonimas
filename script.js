@@ -73,15 +73,13 @@ tipoSelecionado=crime;
 
 document.getElementById("tituloCrime").innerText="Denúncia: "+crime;
 
-document.getElementById("formulario")
-.classList.remove("hidden");
+document.getElementById("formulario").classList.remove("hidden");
 
 }
 
 function cancelar(){
 
-document.getElementById("formulario")
-.classList.add("hidden");
+document.getElementById("formulario").classList.add("hidden");
 
 }
 
@@ -94,11 +92,8 @@ return "DEN"+Math.floor(Math.random()*1000000);
 function registrar(){
 
 const endereco=document.getElementById("endereco").value;
-
 const bairro=document.getElementById("bairro").value;
-
 const referencia=document.getElementById("referencia").value;
-
 const descricao=document.getElementById("descricao").value;
 
 const protocolo=gerarProtocolo();
@@ -126,8 +121,7 @@ barra.innerHTML="Protocolo gerado: "+protocolo;
 
 barra.classList.remove("hidden");
 
-document.getElementById("btnDownload")
-.classList.remove("hidden");
+document.getElementById("btnDownload").classList.remove("hidden");
 
 }
 
@@ -170,17 +164,13 @@ const dados=JSON.parse(localStorage.getItem(numero));
 if(!dados){
 
 alert("Protocolo não encontrado");
-
 return;
 
 }
 
 const barra=document.getElementById("barraConsulta");
 
-barra.innerHTML=
-
-"Protocolo consultado: "+dados.protocolo+
-" | Status: "+dados.status;
+barra.innerHTML="Protocolo consultado: "+dados.protocolo+" | Status: "+dados.status;
 
 barra.classList.remove("hidden");
 
