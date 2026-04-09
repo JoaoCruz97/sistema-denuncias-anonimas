@@ -15,12 +15,6 @@ padding:25px;
 
 }
 
-header h1{
-
-margin:0;
-
-}
-
 .container{
 
 max-width:700px;
@@ -37,7 +31,6 @@ border-radius:10px;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:15px;
-margin-bottom:20px;
 
 }
 
@@ -61,7 +54,7 @@ background:#b30000;
 
 #subcategorias{
 
-margin-top:15px;
+margin-top:20px;
 
 }
 
@@ -93,8 +86,6 @@ width:85%;
 max-width:420px;
 margin:8px;
 padding:10px;
-border-radius:5px;
-border:1px solid #ccc;
 
 }
 
@@ -154,25 +145,11 @@ font-weight:bold;
 
 }
 
-.btnDownload{
-
-margin-top:15px;
-padding:10px 20px;
-background:#b30000;
-color:white;
-border:none;
-cursor:pointer;
-border-radius:5px;
-
-}
-
 .hidden{
 
 display:none;
 
 }
-
-/* RESPONSIVO */
 
 @media(max-width:600px){
 
