@@ -1,88 +1,4 @@
-const categorias = {
-
-seguranca:[
-"Violência contra a mulher",
-"Violência contra crianças",
-"Violência contra idosos",
-"Furto/Roubo",
-"Drogas",
-"Atividade suspeita"
-],
-
-direitos:[
-"Assédio moral/sexual",
-"Bullying/Cyberbullying",
-"Discriminação",
-"Direitos humanos",
-"Denúncia institucional"
-],
-
-ambiente:[
-"Maus-tratos a animais",
-"Crimes ambientais",
-"Perturbação do sossego",
-"Situações de risco"
-],
-
-cidade:[
-"Infraestrutura urbana",
-"Serviços públicos",
-"Transporte e trânsito",
-"Irregularidades escolares"
-]
-
-};
-
-let tipoSelecionado="";
-
-function abrirCategoria(cat){
-
-const area=document.getElementById("subcategorias");
-area.innerHTML="";
-
-categorias[cat].forEach(crime=>{
-
-const btn=document.createElement("button");
-btn.className="subcrime";
-btn.innerText=crime;
-
-btn.onclick=()=>{
-
-document.querySelectorAll(".subcrime").forEach(b=>b.classList.remove("ativo"));
-
-btn.classList.add("ativo");
-
-abrirFormulario(crime);
-
-};
-
-area.appendChild(btn);
-
-});
-
-}
-
-function abrirFormulario(crime){
-
-tipoSelecionado=crime;
-
-document.getElementById("tituloCrime").innerText="Denúncia: "+crime;
-
-document.getElementById("formulario").classList.remove("hidden");
-
-}
-
-function cancelar(){
-
-document.getElementById("formulario").classList.add("hidden");
-
-}
-
-function gerarProtocolo(){
-
-return "DEN"+Math.floor(Math.random()*1000000);
-
-}
+let ultimaDenuncia = null;
 
 function registrar(){
 
@@ -91,7 +7,7 @@ const bairro=document.getElementById("bairro").value;
 const referencia=document.getElementById("referencia").value;
 const descricao=document.getElementById("descricao").value;
 
-const protocolo=gerarProtocolo();
+const protocolo="DEN"+Math.floor(Math.random()*1000000);
 
 const denuncia={
 
@@ -108,13 +24,21 @@ data:new Date().toLocaleString()
 
 localStorage.setItem(protocolo,JSON.stringify(denuncia));
 
-gerarPDF(denuncia);
+ultimaDenuncia = denuncia;
 
-alert("Denúncia registrada! Protocolo: "+protocolo);
+const barra=document.getElementById("barraProtocolo");
+
+barra.innerHTML="Protocolo gerado: "+protocolo;
+
+barra.classList.remove("hidden");
+
+document.getElementById("btnDownload").classList.remove("hidden");
 
 }
 
-function gerarPDF(d){
+function baixarPDF(){
+
+if(!ultimaDenuncia) return;
 
 const { jsPDF } = window.jspdf;
 
@@ -122,23 +46,23 @@ const doc=new jsPDF();
 
 doc.text("Sistema de Denúncias Anônimas",20,20);
 
-doc.text("Protocolo: "+d.protocolo,20,40);
+doc.text("Protocolo: "+ultimaDenuncia.protocolo,20,40);
 
-doc.text("Tipo: "+d.tipo,20,50);
+doc.text("Tipo: "+ultimaDenuncia.tipo,20,50);
 
-doc.text("Endereço: "+d.endereco,20,60);
+doc.text("Endereço: "+ultimaDenuncia.endereco,20,60);
 
-doc.text("Bairro: "+d.bairro,20,70);
+doc.text("Bairro: "+ultimaDenuncia.bairro,20,70);
 
-doc.text("Referência: "+d.referencia,20,80);
+doc.text("Referência: "+ultimaDenuncia.referencia,20,80);
 
 doc.text("Descrição:",20,90);
 
-doc.text(d.descricao,20,100);
+doc.text(ultimaDenuncia.descricao,20,100);
 
-doc.text("Status: "+d.status,20,120);
+doc.text("Status: "+ultimaDenuncia.status,20,120);
 
-doc.save("denuncia_"+d.protocolo+".pdf");
+doc.save("denuncia_"+ultimaDenuncia.protocolo+".pdf");
 
 }
 
@@ -151,32 +75,17 @@ const dados=JSON.parse(localStorage.getItem(numero));
 if(!dados){
 
 alert("Protocolo não encontrado");
+
 return;
 
 }
 
-document.getElementById("resultado").innerHTML=`
+const barra=document.getElementById("barraConsulta");
 
-<div class="cardResultado">
+barra.innerHTML=
 
-<h3>Resumo da denúncia</h3>
+"Protocolo consultado: "+dados.protocolo+" | Status: "+dados.status;
 
-<p><b>Protocolo:</b> ${dados.protocolo}</p>
-
-<p><b>Tipo:</b> ${dados.tipo}</p>
-
-<p><b>Endereço:</b> ${dados.endereco}</p>
-
-<p><b>Bairro:</b> ${dados.bairro}</p>
-
-<p><b>Referência:</b> ${dados.referencia}</p>
-
-<p><b>Descrição:</b> ${dados.descricao}</p>
-
-<p class="status">Status atual: ${dados.status}</p>
-
-</div>
-
-`;
+barra.classList.remove("hidden");
 
 }
