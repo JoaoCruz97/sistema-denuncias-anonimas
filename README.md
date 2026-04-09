@@ -100,13 +100,13 @@ Após alguns segundos o GitHub irá gerar o link público do site.
 Repositório do projeto:
 
 ```
-(Adicionar aqui o link do seu repositório GitHub)
+(https://github.com/JoaoCruz97/sistema-denuncias-anonimas )
 ```
 
 Site publicado:
 
 ```
-(Adicionar aqui o link do GitHub Pages)
+(https://joaocruz97.github.io/sistema-denuncias-anonimas/ )
 ```
 
 ---
@@ -128,4 +128,4 @@ Em um ambiente real, um sistema de denúncias deveria incluir:
 ## Autor
 
 **João Cruz**
-Curso: Análise e Desenvolvimento de Sistemas
+ / Curso: Análise e Desenvolvimento de Sistemas
